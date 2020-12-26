@@ -3,7 +3,7 @@
 1.Clone the repositiry: 
 `git clone`
 
-2. Download the dependencies: 
+2.Download the dependencies: 
 `npm install`
 
 3.Run the web server:
