@@ -19,7 +19,7 @@ class WeekContainer extends Component{
             e.preventDefault();
             const city = e.target.elements.city.value
             if(city){
-                var weatherAPIURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${openWeatherMapAPI}`;
+                var weatherAPIURL = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${openWeatherMapAPI}`;
                 fetch(weatherAPIURL)
                 .then(res => res.json())
                 .then(data => {
