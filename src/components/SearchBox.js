@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBox = ({searchChange}) => {
 
     return(
-        <html>
+        <div>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <form className='tc' onSubmit={searchChange}>
             <input 
@@ -12,9 +12,9 @@ const SearchBox = ({searchChange}) => {
             type='search'
             placeholder='Search city...'
             />
-            <button className='ba3 pa2 ma2 b--white'><i class="fa fa-search"></i></button>
+            <button className='ba3 pa2 ma2 b--white'><i className="fa fa-search"></i></button>
         </form>
-        </html>
+        </div>
         
     );
 }

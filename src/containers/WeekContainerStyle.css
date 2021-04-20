@@ -7,18 +7,31 @@
     font-style: italic;
 }
 
+@media only screen and (max-width: 470px) {
+    .title {
+        font-size: 1.5em;
+    }
+  }
+
 .cityname{
     font-size: 1.5em;
     padding: 0;
     margin-bottom: 0;
 }
 
-.example{
+.mainDivDayCards{
     color: white;
 }
 
+.dayCards{
+    overflow-y: scroll;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+}
+
 footer{
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -26,3 +39,13 @@ footer{
     padding: 1em;
     background-color: #063368;
 }
+
+.beginFooter{
+    position: fixed;
+}
+
+@media only screen and (min-width: 1064px) {
+    footer {
+        position: fixed;
+    }
+  }

@@ -19,7 +19,7 @@ class WeekContainer extends Component{
             e.preventDefault();
             const city = e.target.elements.city.value
             if(city){
-                var weatherAPIURL = `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${openWeatherMapAPI}`;
+                var weatherAPIURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${openWeatherMapAPI}`;
                 fetch(weatherAPIURL)
                 .then(res => res.json())
                 .then(data => {
@@ -28,7 +28,7 @@ class WeekContainer extends Component{
                          fullData: data.list,
                          dailyData: dailyData,
                          searchfield: city
-                     }, () => console.log(this.state))
+                     })
                 })     
             }else{
                 console.log('no city')
@@ -44,23 +44,30 @@ class WeekContainer extends Component{
     render(){
         if(this.state.searchfield){
             return(      
-                <div className='example'>   
-                    <h1 className='tc title'>Weather Forecast</h1>
-                    <SearchBox searchChange = {this.getWeatherAPI}/>
-                    <h3 className='tc cityname'>{this.state.searchfield}</h3>
-                    {this.formatDayCards()}
+                <div className="mainDivDayCards">
+                    <div >
+                        <h1 className='tc title'>Weather Forecast</h1>
+                        <SearchBox searchChange = {this.getWeatherAPI}/>
+                        <h3 className='tc cityname'>{this.state.searchfield}</h3>
+                    </div>
+                   
+                    <div className='dayCards'>                         
+                        {this.formatDayCards()}                       
+                    </div>
                     <footer className='tc'>Weather forecast created by Nikola Georgiev</footer>
                 </div>
+                
             )
         }else{
             return(
-                <div className='example'>   
+                <div className="mainDivDayCards">
                     <h1 className='tc title'>Weather Forecast</h1>
                     <SearchBox searchChange = {this.getWeatherAPI}/>
                     <h3 className='tc cityname'>{this.state.searchfield}</h3>
                     <BeginPage/>
-                    <footer className='tc'>Weather forecast created by Nikola Georgiev</footer>
+                    <footer className='tc beginFooter'>Weather forecast created by Nikola Georgiev</footer>
                 </div>
+                
             )
         }
         
